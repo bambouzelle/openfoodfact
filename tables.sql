@@ -10,7 +10,7 @@ CREATE TABLE diets (
 CREATE TABLE users (
   user_id SERIAL PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
-  diet_id INT REFERENCES diets(diet_id)
+  diet_id SERIAL REFERENCES diets(diet_id)
 );
 
 CREATE TABLE products (
