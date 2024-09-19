@@ -14,6 +14,7 @@ Résultat du TP de la matière "Intégration des données" réalisé par BERNARD
 (Si il y a un `*` à côté du bloc de code cela indique que l'étape est en cours. Si il y a un nombre, cela indique que l'étape a été réalisé.)
 * Si vous souhaitez visualiser la base de donnée vous pouvez aller sur `http://localhost:8080/` pour accéder à phpmyadmin
 * En plus des tables `diets` et `users` vous devriez désormais voir une table `products` si tout s'est déroulé avec succès
+* Une fois ceci effectué, vous pouvez lancer le script `get_product_by_users.py` avec la commande suivante dans le terminal `python ./get_product_by_users.py`
 
 ## Résultat Final
 ![PhpMyAdmin diets](bdd_diets.png)
