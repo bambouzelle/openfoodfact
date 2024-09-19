@@ -1,13 +1,30 @@
 services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql_db
+    environment:
+      MYSQL_ROOT_PASSWORD: root          # Change this to a secure password
+      MYSQL_DATABASE: openfoodfact       # The database that will be created
+      MYSQL_USER: user                   # Optional: A non-root user
+      MYSQL_PASSWORD: userpassword       # Optional: Password for the non-root user
+    ports:
+      - "3306:3306"
+    networks:
+      - pyspark-net
+    volumes:
+      - ./mysql_data:/var/lib/mysql
+
   jupyter:
-    image: jupyter/pyspark-notebook:latest
+    build: .
     ports:
       - "8888:8888"  # Exposes Jupyter Notebook on port 8888
     volumes:
       - ./work:/home/jovyan/work  # Mounts the current directory to the notebook workspace
     networks:
-      - pyspark-network
+      - pyspark-net
+    depends_on:
+      - mysql
 
 networks:
-  pyspark-network:
+  pyspark-net:
     driver: bridge
