@@ -8,7 +8,7 @@ Résultat du TP de la matière "Intégration des données" réalisé par BERNARD
 * Le déplacer dans le répertoire : `work/data/`
 * Se positionner dans le répertoire `openfoodfact/`
 * Effectuer un `docker-compose up` (ou `sudo docker compose up` sous linux) avec votre invite de commande
-* Aller sur `http://localhost:8888/` et copier le token (que vous pourrez trouver dans les logs de votre invite de commande) puis le coller pour accéder à jupyter notebook ou cliquez sur le lien qui aparait dans le terminal
+* Aller sur `http://localhost:8888/` et copier le token (que vous pourrez trouver dans les logs de votre invite de commande) puis le coller pour accéder à jupyter notebook ou cliquez sur le lien qui apparaît dans le terminal
 * Aller dans le répertoire `work/` et double-cliquer sur etl.ipynb
 * Lancer la totalité du notebook en cliquant sur les deux flèche en haut (fastforward) et, cliquer sur `restart` au pop-up et patienter 
 (Si il y a un `*` à côté du bloc de code cela indique que l'étape est en cours. Si il y a un nombre, cela indique que l'étape a été réalisé.)
