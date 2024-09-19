@@ -11,6 +11,8 @@ services:
       - "3306:3306"
     networks:
       - pyspark-network
+    volumes:
+      - ./tables.sql:/docker-entrypoint-initdb.d/tables.sql
     tmpfs:
       - /var/lib/mysql
 
