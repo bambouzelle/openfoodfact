@@ -1,6 +1,21 @@
 version: "3.8"
 
 services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql_db
+    environment:
+      MYSQL_ROOT_PASSWORD: root          # Change this to a secure password
+      MYSQL_DATABASE: openfoodfact       # The database that will be created
+      MYSQL_USER: user                   # Optional: A non-root user
+      MYSQL_PASSWORD: userpassword       # Optional: Password for the non-root user
+    ports:
+      - "3306:3306"
+    networks:
+      - pyspark-net
+    volumes:
+      - ./mysql_data:/var/lib/mysql
+
   jupyter:
     build:
       context: .
@@ -33,7 +48,9 @@ services:
     volumes:
       - db_data:/var/lib/mysql
     networks:
-      - pyspark-network
+      - pyspark-net
+    depends_on:
+      - mysql
 
 networks:
   pyspark-network:
